@@ -3,8 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: "rgba(34, 139, 34, 0.8)"
 }
-
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

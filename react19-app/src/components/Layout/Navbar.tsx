@@ -1,11 +1,11 @@
 
 import { NavLink } from "react-router-dom";
-// import "./Navbar.css"; // Optional for styling
+import "./Navbar.css"; 
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="navbar">
-      <h2 className="logo">Finance & Weather</h2>
+    <nav className="navbar" style={{ height: "60px" }}>
+      <h1 className="logo">Personal Finance & Weather </h1>
       <ul className="nav-links">
         <li>
           <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
             Expenses
           </NavLink>
         </li>
-        <li>
+        <li style={{ marginRight: "46px" }}>
           <NavLink to="/weather" className={({ isActive }) => (isActive ? "active" : "")}>
             Weather
           </NavLink>

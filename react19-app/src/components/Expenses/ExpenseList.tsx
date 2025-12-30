@@ -1,6 +1,4 @@
-
 import React from "react";
-import ExpenseItem from "./ExpenseItem";
 
 interface Expense {
   id: string;
@@ -20,17 +18,34 @@ const ExpenseList: React.FC<ExpenseListProps> = ({ items }) => {
   }
 
   return (
-    <div>
-      {items.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          category={expense.category}
-          date={expense.date}
-        />
-      ))}
-    </div>
+    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <thead>
+        <tr>
+          <th style={{ border: "1px solid #ccc", padding: "8px" }}>Title</th>
+          <th style={{ border: "1px solid #ccc", padding: "8px" }}>Amount</th>
+          <th style={{ border: "1px solid #ccc", padding: "8px" }}>Category</th>
+          <th style={{ border: "1px solid #ccc", padding: "8px" }}>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {items.map((expense) => (
+          <tr key={expense.id}>
+            <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+              {expense.title}
+            </td>
+            <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+              {expense.amount}
+            </td>
+            <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+              {expense.category}
+            </td>
+            <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+              {expense.date}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
